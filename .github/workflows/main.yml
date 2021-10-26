@@ -28,6 +28,7 @@ jobs:
       run: |
         pip install requests
     - name: Test with pytest
-      run: |
+      env:
         sample_input: ${{ github.event.inputs.numOctocats }}
+      run: |
         python trigger_webhooks.py
